@@ -1,3 +1,8 @@
+let value = localStorage.getItem('Total');
+    if (value === null) {
+        localStorage.setItem('Total', 0.0);
+    }
+
 allButtons = document.querySelectorAll(".btn");
 allButtons.forEach(button => {
     button.addEventListener("click",()=>
@@ -15,7 +20,6 @@ clearbutton = document.querySelector(".dull").addEventListener("click", ()=>{
 equalbutton = document.querySelector(".equal").addEventListener("click", ()=>{
     document.querySelector(".saveTransaction").style.display = "none";
     let expression = document.querySelector(".input").innerHTML.replaceAll(" ","");
-
     try{
         answer = eval(expression);
 
